@@ -1,0 +1,142 @@
+$primary: #5957b9;
+$secondary: #888888;
+$lightsecondary: #e8e7ed;
+$success: #5cb85c;
+$danger: #d9534f;
+$light: #ffffff;
+
+%font-header {
+  font-size: 24px;
+}
+
+%font-text {
+  font-size: 14px;
+}
+%font-btn {
+  font-size: 14px;
+}
+
+// witdh and height
+%w100 {
+  width: 100%;
+}
+
+%h100 {
+  height: 100%;
+}
+
+%w100vw {
+  width: 100%;
+}
+
+%h100vh {
+  height: 100vw;
+}
+
+%w100-h100 {
+  width: 100%;
+  height: 100%;
+}
+
+// font weight
+
+%fw600 {
+  font-weight: 600;
+}
+
+// position
+%posf {
+  position: fixed;
+}
+
+%pos-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+%shadow-low {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+%shadow-high {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+%transition-3 {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+%bdrs8 {
+  border-radius: 8px;
+}
+
+%mg10 {
+  margin: 10px;
+}
+
+%pd20 {
+  padding: 20px;
+}
+
+%pd10 {
+  padding: 10px;
+}
+
+// icon size
+%icon20 {
+  width: 20px;
+  height: 20px;
+}
+
+%icon15 {
+  width: 15px;
+  height: 15px;
+}
+
+// border outline
+%bdn-oln {
+  border: none;
+  outline: none;
+}
+
+// align
+%jcc-aic {
+  justify-content: center;
+  align-items: center;
+}
+
+%aic {
+  align-items: center;
+}
+%jcsb {
+  justify-content: space-between;
+}
+
+// Defalt css
+
+// Hover css
+%hover5 {
+  box-shadow: 0 5px 1px #3c3a7e;
+  transform: translateY(-5px);
+}
+%hover10 {
+  box-shadow: 0 10px 1px #3c3a7e;
+  transform: translateY(-10px);
+}
+
+//Active css
+%active0 {
+  transform: translateY(0px);
+  box-shadow: 0 0 0 #5957b9;
+}

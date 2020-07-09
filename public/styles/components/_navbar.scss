@@ -1,0 +1,135 @@
+.nav-container {
+  @extend %flex-row;
+  @extend %pd10;
+  @extend %shadow-low;
+  z-index: 11;
+  justify-content: space-between;
+  user-select: none;
+  padding-left: 300px;
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+
+  > .text-header {
+    align-items: center;
+    display: none;
+  }
+
+  > .search-container {
+    @extend %flex-row;
+    align-items: center;
+    .fa-search {
+      @extend %shadow-low;
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+      color: white;
+      background-color: #5957b9;
+      border-radius: 50%;
+      padding: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        @extend %hover5;
+      }
+      &:active {
+        @extend %active0;
+      }
+    }
+    input {
+      background-color: #f6f7ff;
+      border: none;
+      padding: 5px 10px;
+      width: 250px;
+      border-radius: 5px;
+      &::placeholder {
+        color: #c5c6df;
+      }
+    }
+  }
+  > .btn-signout {
+    @extend %flex-row;
+    @extend %shadow-low;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: #5957b9 solid 2px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+    align-items: center;
+    outline: none;
+    color: #5957b9;
+    > .fa-sign-out-alt {
+      width: 15px;
+      height: 15px;
+      margin-left: 10px;
+    }
+    &:hover {
+      @extend %hover5;
+    }
+    &:active {
+      @extend %active0;
+    }
+  }
+  > .btn-menu {
+    @extend %flex-row;
+    @extend %shadow-low;
+    cursor: pointer;
+    display: none;
+    border: #5957b9 solid 2px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+    align-items: center;
+    outline: none;
+    color: #5957b9;
+    > .fa-bars,
+    .fa-times {
+      width: 20px;
+      height: 20px;
+    }
+    transition: all 0.2s;
+    &:hover {
+      @extend %hover5;
+    }
+    &:active {
+      @extend %active0;
+    }
+  }
+}
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .nav-container {
+    padding-left: 0;
+
+    > .text-header {
+      margin-left: 10px;
+      display: flex;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    > .search-container,
+    .btn-signout {
+      display: none;
+    }
+    > .btn-menu {
+      display: block;
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+}

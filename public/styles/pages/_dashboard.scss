@@ -1,0 +1,321 @@
+.dashboard-container {
+  @extend %flex-row;
+  background-color: #f6f7ff;
+  padding: 20px;
+  > .-left {
+    width: 60%;
+    > .status-container {
+      @extend %flex-row;
+      margin-bottom: 20px;
+      > .card {
+        @extend %flex-row;
+        @extend %shadow-low;
+        @extend %bdrs8;
+        width: 100%;
+        background-color: #ffffff;
+        user-select: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+          @extend %hover10;
+        }
+        &:active {
+          @extend %active0;
+        }
+        &:nth-child(2) {
+          margin: 0 20px;
+        }
+        > .icon {
+          @extend %jcc-aic;
+          padding: 20px;
+          display: flex;
+          > .fa-desktop,
+          .fa-check,
+          .fa-envelope {
+            @extend %w100-h100;
+            min-width: 50px;
+            background-color: #f6f7ff;
+            color: #5957b9;
+          }
+        }
+        > .text {
+          @extend %flex-col;
+          width: 100%;
+          justify-content: center;
+          padding: 10 px;
+          .text-header {
+            color: slategray;
+            margin-bottom: 10px;
+            font-size: 18px;
+          }
+          .text-number {
+            color: #000;
+            font-size: 44px;
+          }
+        }
+      }
+    }
+    > .statistics-container {
+      @extend %shadow-low;
+      @extend %flex-col;
+      @extend %bdrs8;
+      margin-bottom: 20px;
+      background-color: #ffffff;
+      > .header {
+        @extend %shadow-low;
+        @extend %flex-row;
+        user-select: none;
+        padding: 20px;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        > h2 {
+          font-size: 24px;
+        }
+        > .select-div {
+          @extend %shadow-low;
+          display: flex;
+          position: relative;
+          border-radius: 15px;
+          background-color: #ffffff;
+          user-select: none;
+          cursor: pointer;
+          transition: all 0.2s;
+          &:hover {
+            @extend %hover5;
+          }
+          &:active {
+            @extend %active0;
+          }
+          > select {
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: #ffffff;
+            width: 120px;
+            border: 2px solid #5957b9;
+          }
+          > .fa-chevron-down {
+            color: #5957b9;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+  > .-right {
+    @extend %flex-col;
+    width: 40%;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+
+    > .conic-container {
+      @extend %jcc-aic;
+      @extend %shadow-low;
+      display: flex;
+      margin-bottom: 20px;
+      width: 100%;
+      flex-direction: column;
+      background-color: #ffffff;
+      > .header {
+        @extend %shadow-low;
+        @extend %flex-row;
+        user-select: none;
+        padding: 20px;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        > h2 {
+          font-size: 24px;
+        }
+      }
+    }
+    > .last-itemlist {
+      @extend %flex-col;
+      @extend %shadow-low;
+      background-color: #ffffff;
+      width: 100%;
+      margin-bottom: 20px;
+      > .header {
+        @extend %shadow-low;
+        @extend %flex-row;
+        user-select: none;
+        padding: 20px;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        background-color: #ffffff;
+        > h2 {
+          font-size: 24px;
+        }
+      }
+      > .item-list {
+        @extend %flex-col;
+        > li {
+          display: flex;
+          padding: 10px;
+          align-items: center;
+          border-bottom: 2px solid #5957b969;
+          transition: all 0.2s;
+          &:hover {
+            @extend %hover10;
+          }
+          &:active {
+            @extend %active0;
+          }
+
+          border-top: none;
+          > img {
+            height: 100%;
+
+            max-height: 60px;
+            width: auto;
+          }
+          .text {
+            @extend %flex-col;
+            text-overflow: ellipsis;
+            width: 100%;
+            p {
+              display: flex;
+              justify-content: left;
+              padding: 0 10px 0 20px;
+              font-size: 12px;
+              line-height: 30px;
+            }
+          }
+          .status {
+            color: #ffffff;
+            min-width: fit-content;
+            font-size: 12px;
+            font-weight: bold;
+            &.ready {
+              background-color: #12cf12;
+            }
+            &.notready {
+              background-color: red;
+            }
+            padding: 8px;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  .dashboard-container {
+    flex-direction: column;
+    > .-left {
+      width: 100%;
+    }
+    > .-right {
+      width: 100%;
+      padding-top: 20px;
+      padding-left: 0;
+    }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .dashboard-container {
+    > .-left {
+      .status-container {
+        > .card {
+          > .icon {
+            padding: 10px;
+          }
+          > .text {
+            padding: 10px;
+            .text-header {
+              font-size: 14px;
+            }
+            .text-number {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-banner {
+    border: 2px solid $primary;
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .dashboard-container {
+    > .-left {
+      .status-container {
+        flex-direction: column;
+        > .card {
+          padding: 10px;
+          &:nth-child(2) {
+            margin: 20px 0;
+          }
+          > .icon {
+            padding: 20px;
+          }
+          > .text {
+            padding: 20px;
+            .text-header {
+              font-size: 24px;
+            }
+            .text-number {
+              font-size: 54px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 375.98px) {
+  .dashboard-container {
+    > .-right {
+      > .last-itemlist {
+        > .item-list {
+          > li {
+            flex-direction: column;
+            .text {
+              margin: 10px 0;
+              p {
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
